@@ -1,0 +1,340 @@
+body {
+    font-family: monospace, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    padding: 0.5rem;
+    flex: 1;
+    /* min-width: 300px; */
+    box-sizing: border-box;
+}
+
+h2, h3 {
+    color: #333;
+    font-size: 16px;
+}
+
+p {
+    color: #666;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #e7e7e7;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #header {
+        margin-left: 20px !important;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .column {
+        min-width: 100%;
+    }
+
+    #other-columns {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto;
+    }
+
+    #third {
+        order: 3; /* Ensure the third column appears in the correct order */
+    }
+
+    #fourth {
+        grid-column: span 1;
+    }
+
+    .github-chart {
+        width: 100%;
+    }
+
+}
+
+/* Global CSS ends here */
+
+#header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 20px 20px 20px;
+    align-items: center;
+    gap: 20px;
+    margin-left: 180px;
+}
+
+#profile-picture {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#profile-name {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#profile-name h2 {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+#profile-name p {
+    margin: 0;
+    font-size: 12px;
+}
+
+hr {
+    margin: 0 auto;
+    border: 0;
+    border-top: 0.1rem solid #333;
+    width: 73%;
+}
+
+/* First Column Starts here */
+#first {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+#tiny-box-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.tiny-box {
+    flex: 1;
+    height: 200px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+}
+
+#location {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#location h3 {
+    margin: 0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+/* Mode blinking light starts*/
+
+.blinking-light {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #84cc16;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Mode blinking light ends */
+
+#mode {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#mode h3 {
+    margin: 0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    height: 370px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+/* First Column Ends here */
+
+/* Other Columns house 2nd, 3rd and 4th columns */
+#other-columns{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    flex: 2;
+    min-width: 300px;
+    
+}
+
+/* Second Column Starts here */
+#second {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.about p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+#exp-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+#years-experience,
+#cv-box {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 160px;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Second Column Ends here */
+
+/* Third Column Starts here */
+#third {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.experience-box {
+    display: flex;
+    flex-direction: column;
+    min-height: 375px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.exp-button {
+    width: 100%;
+}
+
+.education-box {
+    display: flex;
+    flex-direction: column;
+    height: 160px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+
+/* Third Column ends */
+
+/* Fourth starts */
+#fourth {
+    grid-column: span 2;
+}
+
+.github-chart {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    height:190px;
+}
