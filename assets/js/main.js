@@ -67,4 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.experience-box ul li').forEach(item => {
         item.addEventListener('click', () => toggleExperience(item));
     });
+
+    // Remove inline onclick attributes from HTML
+    document.querySelectorAll('.projects ul li, .experience-box ul li').forEach(item => {
+        item.removeAttribute('onclick');
+    });
 });
