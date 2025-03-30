@@ -205,6 +205,32 @@ hr {
     padding: 1rem;
 }
 
+.projects ul li {
+    cursor: pointer;
+    position: relative;
+    display: block; /* Change to block to stack description below */
+    padding-bottom: 5px; /* Add spacing for the description */
+}
+
+.projects ul li .toggle-icon {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    float: right; /* Align the icon to the right */
+}
+
+.projects ul li .description {
+    display: none;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #555;
+    clear: both; /* Ensure it appears below the icon */
+}
+
+.projects ul li.active .description {
+    display: block;
+}
+
 .tech-stack {
     display: flex;
     flex-direction: column;
@@ -303,6 +329,32 @@ hr {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
+}
+
+.experience-box ul li {
+    cursor: pointer;
+    position: relative;
+    display: block; /* Stack description below */
+    padding-bottom: 5px; /* Add spacing for the description */
+}
+
+.experience-box ul li .toggle-icon {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    float: right; /* Align the icon to the right */
+}
+
+.experience-box ul li .description {
+    display: none;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #555;
+    clear: both; /* Ensure it appears below the icon */
+}
+
+.experience-box ul li.active .description {
+    display: block;
 }
 
 .exp-button {
