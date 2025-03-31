@@ -13,13 +13,15 @@
 </head>
 <body>
     <!-- Header section -->
-    <div id="header">
-        <div id="profile-picture-container">
-            <img id="profile-picture" src="https://avatars.githubusercontent.com/u/27041785?v=4" alt="Profile Picture">
-        </div>
-        <div id="profile-name">
-            <h2>Chris Nwaije jr</h2>
-            <p>Digital Nomad</p>
+    <div class="container">
+        <div id="header">
+            <div id="profile-picture-container">
+                <img id="profile-picture" src="https://avatars.githubusercontent.com/u/27041785?v=4" alt="Profile Picture">
+            </div>
+            <div id="profile-name">
+                <h2>Chris Nwaije jr</h2>
+                <p>Digital Nomad</p>
+            </div>
         </div>
     </div>
     <hr>
@@ -36,14 +38,22 @@
                         <p>Map will display here</p>
                     </div>
                 </div>
+
                 <div id="mode" class="tiny-box">
-                    <h3>Mode</h3>
-                    <div>
-                        <ul class="light-strobe">
-                            <li id="green-light" class="blinking-light"></li>
-                        </ul>
+                    
+                    <div class="mode-icon">
+                        <div class="mode-icon-container">
+                            <!-- <h3>Mode</h3> -->
+                            <ul class="light-strobe">
+                                <li id="green-light" class="blinking-light"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mode-text">
+                        <p>Light Mode</p>
                     </div>
                 </div>
+
             </div>
 
             <!-- Projects section -->
@@ -98,24 +108,45 @@
                     <p>I'm a self-taught web developer with 6+ of experience. I love creating cool digital experiences using the latest frontend technologies and Node.js for solid backend solutions. Making seamless user interfaces and optimizing performance is my jam—I get a real kick out of turning ideas into reality with clean, efficient code.</p>
                 </div>
                 <div class="contact">
-                    <h2>Get In Touch</h2>
-                    <ul>
-                        <i class="fa-brands fa-linkedin"></i>
-                        <i class="fa-brands fa-discord"></i>
-                        <i class="fa-brands fa-telegram"></i>
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </ul>
+                    <div class="contact-header">
+                        <h2>Get In Touch</h2>
+                        <ul>
+                            <a href="https://www.linkedin.com/in/chriskript/" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/chriskript/" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/chriskript/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/chriskript/" target="_blank">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="additional-contact">
+                        <a href="tel:+2348164872609" class="phone">
+                            <i class="fa-solid fa-mobile-retro"></i>
+                            <span>+234 816 487 2609</span>
+                        </a>
+                        <a href="https://wa.me/2348164872609" target="_blank" class="chat">
+                            <i class="fa-solid fa-comments"></i>
+                            <span>Start a Chat</span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Experience and CV section -->
                 <div id="exp-container" class="exp-cv-box">
                     <div id="years-experience">
                         <h3>Years of Experience</h3>
+                        <p id="experience-years"></p>
                     </div>
                     <div id="cv-box">
                         <h3>CV</h3>
-                        <button type="button" class="exp-button btn btn-outline-dark">View</button>
-                        <button type="button" class="exp-button btn btn-outline-dark">Download</button>
+                        <a href="assets/cv/chriskript_resume.pdf" target="_blank" class="exp-button btn btn-outline-dark">View</a>
+                        <a href="assets/cv/chriskript_resume.pdf" download class="exp-button btn btn-outline-dark">Download</a>
                     </div>
                 </div>
             </div>
