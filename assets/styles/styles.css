@@ -36,11 +36,43 @@ ul {
 }
 
 li {
+    cursor: pointer;
+    position: relative;
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    justify-content: space-between; 
+    padding-bottom: 5px;
     background-color: #e7e7e7;
     border: 1px solid #ddd;
     border-radius: 3px;
     margin: 5px 0;
     padding: 10px;
+}
+
+li .toggle-icon {
+    position: absolute; /* Keep the icon fixed */
+    top: 10px;
+    right: 10px;
+    margin-left: 0;
+    font-size: 0.9rem;
+    color: #333;
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center; 
+}
+
+li .description {
+    display: none;
+    margin-top: 10px; 
+    font-size: 0.85rem;
+    color: #555;
+    clear: both; /
+    word-wrap: break-word; 
+}
+
+li.active .description {
+    display: block;
 }
 
 /* Media Queries */
@@ -171,6 +203,7 @@ hr {
     background-color: #84cc16;
     border-radius: 50%;
     animation: blink 1s infinite;
+    align-items: end;
 }
 
 @keyframes blink {
@@ -182,15 +215,34 @@ hr {
 
 #mode {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-
 }
 
 #mode h3 {
     margin: 0;
     font-size: 0.9rem;
     text-decoration: underline;
+}
+
+.mode-icon {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+/* .mode-icon-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+    
+} */
+
+.mode-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 
@@ -203,33 +255,30 @@ hr {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
+    overflow: hidden; /* Remove vertical scrolling from the container */
 }
 
-.projects ul li {
-    cursor: pointer;
-    position: relative;
-    display: block; /* Change to block to stack description below */
-    padding-bottom: 5px; /* Add spacing for the description */
+.projects > div {
+    overflow-y: auto; /* Enable vertical scrolling for the div */
+    height: 100%; /* Ensure it takes the full height of the container */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #888 #e7e7e7; /* For Firefox */
 }
 
-.projects ul li .toggle-icon {
-    margin-left: 10px;
-    font-size: 0.9rem;
-    color: #333;
-    display: flex; /* Replaced float with flexbox */
-    justify-content: flex-end;
+/* Stylish scrollbar for Webkit browsers */
+.projects > div::-webkit-scrollbar {
+    width: 8px;
 }
 
-.projects ul li .description {
-    display: none;
-    margin-top: 5px;
-    font-size: 0.85rem;
-    color: #555;
-    clear: both; /* Ensure it appears below the icon */
+.projects > div::-webkit-scrollbar-track {
+    background: #e7e7e7;
+    border-radius: 5px;
 }
 
-.projects ul li.active .description {
-    display: block;
+.projects > div::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+    border: 2px solid #e7e7e7;
 }
 
 .tech-stack {
