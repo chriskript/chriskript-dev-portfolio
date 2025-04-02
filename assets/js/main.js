@@ -72,4 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.projects ul li, .experience-box ul li').forEach(item => {
         item.removeAttribute('onclick');
     });
+
+    // Update "Years of Experience" dynamically
+    const currentYear = new Date().getFullYear();
+    const wordpressStartYear = 2017;
+    const javascriptStartYear = 2023;
+
+    const wordpressYears = currentYear - wordpressStartYear;
+    const javascriptYears = currentYear - javascriptStartYear;
+
+    document.getElementById('wordpress-years').textContent = wordpressYears;
+    document.getElementById('javascript-years').textContent = javascriptYears;
 });

@@ -24,6 +24,7 @@ body {
 h2, h3 {
     color: #333;
     font-size: 16px;
+    font-weight: 700;
 }
 
 p {
@@ -48,6 +49,7 @@ li {
     border-radius: 3px;
     margin: 5px 0;
     padding: 10px;
+    width: 98%;
 }
 
 li .toggle-icon {
@@ -416,6 +418,38 @@ hr {
     flex-direction: column;
 }
 
+#years-experience p {
+    font-size: 2rem; /* Increase font size */
+    font-weight: bold; /* Increase font weight */
+    color: #333; /* Ensure it stands out */
+}
+
+/* Experience Breakdown Styles */
+#experience-breakdown {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+.experience-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.experience-number {
+    font-size: 2.5rem; /* Larger font size for numbers */
+    font-weight: bold;
+    color: #333;
+}
+
+.experience-text {
+    font-size: 0.9rem; /* Smaller font size for text */
+    color: #666;
+}
+
 /* Second Column Ends here */
 
 /* Third Column Starts here */
@@ -496,4 +530,28 @@ hr {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     height:190px;
+}
+
+/* Tools List Styles */
+.tools-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tools-list li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: #333;
+    padding: 5px 10px;
+}
+
+.tools-list li i {
+    font-size: 1.2rem;
+    color: #007bff;
 }
