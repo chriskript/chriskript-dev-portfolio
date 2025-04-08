@@ -555,3 +555,19 @@ hr {
     font-size: 1.2rem;
     color: #007bff;
 }
+
+.float-left {
+    display: none !important;
+  }
+  
+  .float-right.color-fg-muted.d-flex.flex-items-center {
+    display: none !important;
+  }
+  
+  .mr-1 {
+      display: none !important;
+  }
+  
+  .ai-style-change-2 {
+      display: none !important;
+  }
