@@ -1,5 +1,5 @@
 :root {
-  --color-calendar-graph-day-bg: #dddbdb;
+  --color-calendar-graph-day-bg: #ffffff00;
   --color-calendar-graph-day-L1-bg: #39dd34;
   --color-calendar-graph-day-L2-bg: #45a045;
   --color-calendar-graph-day-L3-bg: #047526;
@@ -26,6 +26,33 @@
     background-color: var(--color-calendar-graph-day-L4-bg);
 }
 
+.ContributionCalendar-day[data-level='0'] {
+    border: 1px solid #e0e0e072;
+  }
+  
+  .ContributionCalendar-day[data-level='1'] {
+    border: 1px solid #39dd34;
+  }
+  
+  .ContributionCalendar-day[data-level='2'] {
+    border: 1px solid #45a045;
+  }
+  
+  .ContributionCalendar-day[data-level='3'] {
+    border: 1px solid #047526;
+  }
+  
+  .ContributionCalendar-day[data-level='4'] {
+    border: 1px solid #0a4208;
+  }
+  
+
+.ContributionCalendar-day:hover {
+    stroke: #000;
+    stroke-width: 1px;
+    cursor: pointer;
+}
+
 table.ContributionCalendar-grid {
     margin-bottom: 0pt;
 }
@@ -39,8 +66,7 @@ table.ContributionCalendar-grid td span.sr-only {
 }
 
 td.ContributionCalendar-label span[aria-hidden='true'] {
-    font-size: 8pt;
-    left: -1pt;
+    font-size: 9pt;
 }
 
 tool-tip {
@@ -52,7 +78,7 @@ tool-tip {
 }
 
 .calendar {
-    font-family: Helvetica, arial;
+    font-family: monospace, arial;
     border: 1px solid #DDDDDD;
     border-radius: 3px;
     min-height: 243px;
@@ -62,7 +88,7 @@ tool-tip {
 
 .calendar-graph text.wday,
 .calendar-graph text.month {
-    font-size: 10px;
+    font-size: 9px;
     fill: #aaa;
 }
 
@@ -80,9 +106,9 @@ div.float-right {
 div.float-right div {
     display: inline-block;
     list-style: none;
-    margin: 0 5px;
+    margin: 5px 20px 5px 5px;
     position: relative;
-    bottom: -1px;
+    /* bottom: -1px; */
     padding: 0;
 }
 
@@ -92,8 +118,8 @@ div.float-right span.sr-only {
 
 .contrib-legend .legend li {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 1px;
+    height: 1px;
 }
 
 .text-small {
@@ -112,6 +138,7 @@ div.float-right span.sr-only {
     border-left: 1px solid #ddd;
     border-top: 1px solid #ddd;
     font-size: 11px;
+    display: none;
 }
 
 .contrib-column-first {

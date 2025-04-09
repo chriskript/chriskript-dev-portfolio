@@ -84,9 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('wordpress-years').textContent = wordpressYears;
     document.getElementById('javascript-years').textContent = javascriptYears;
 
+    // Initialize the GitHub Calendar after other DOM operations
+    GitHubCalendar(".calendar", "chriskript", {responsive: true, global_stats: false, tooltips: false});
 
-    // Initialize the GitHub contribution calendar
-    GitHubCalendar(".calendar", "chriskript", {
-        responsive: true
-    });
 });

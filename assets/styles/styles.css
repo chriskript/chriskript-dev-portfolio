@@ -70,7 +70,7 @@ li .description {
     font-size: 0.85rem;
     color: #555;
     clear: both; /
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
 
 li.active .description {
@@ -529,7 +529,7 @@ hr {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    height:190px;
+    height: stretch;
 }
 
 /* Tools List Styles */
@@ -555,19 +555,3 @@ hr {
     font-size: 1.2rem;
     color: #007bff;
 }
-
-.float-left {
-    display: none !important;
-  }
-  
-  .float-right.color-fg-muted.d-flex.flex-items-center {
-    display: none !important;
-  }
-  
-  .mr-1 {
-      display: none !important;
-  }
-  
-  .ai-style-change-2 {
-      display: none !important;
-  }
