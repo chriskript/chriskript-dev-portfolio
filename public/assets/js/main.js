@@ -1,4 +1,35 @@
+function updateWeather() {
+    const weatherContainer = document.getElementById('weather');
+    fetch('/api/weather?city=Abuja')
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.main) {
+                const temperature = Math.round(data.main.temp);
+                const weatherDescription = data.weather[0].description;
+                const humidity = data.main.humidity;
+                const windSpeed = data.wind.speed;
+
+                weatherContainer.innerHTML = `
+                    <p>Temperature: ${temperature}°C</p>
+                    <p>Description: ${weatherDescription}</p>
+                    <p>Humidity: ${humidity}%</p>
+                    <p>Wind Speed: ${windSpeed} m/s</p>
+                `;
+            } else {
+                weatherContainer.innerHTML = '<p>Error fetching weather data.</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+            weatherContainer.innerHTML = '<p>Error fetching weather data.</p>';
+        });
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Call updateWeather function to fetch and display weather data
+    updateWeather();
+
     // Function to toggle the visibility of project descriptions
     function toggleDescription(element) {
         // Select all project list items

@@ -5,6 +5,11 @@
     --card-border: #ddd;
     --accent: #007bff;
     --muted-text: #666;
+    --strobe-light: #84cc16;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Default light mode */
@@ -96,12 +101,12 @@ body.dark-mode .projects > div::-webkit-scrollbar-thumb {
     opacity: 1;
     transform: rotate(0deg) scale(1);
     z-index: 2;
-}
+} */
 
 #light-mode,
 #dark-mode {
   display: none;
-} */
+} 
 
 /* Focus States for better accessibility and keyboard navigation */
 
@@ -182,7 +187,7 @@ li .toggle-icon {
     right: 10px;
     margin-left: 0;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--muted-text);
     display: flex; 
     justify-content: flex-end;
     align-items: center; 
@@ -192,7 +197,7 @@ li .description {
     display: none;
     margin-top: 10px; 
     font-size: 0.85rem;
-    color: #555;
+    color: var(--muted-text)
     clear: both;
     word-wrap: break-word;
 }
@@ -273,7 +278,7 @@ li.active .description {
 hr {
     margin: 0 auto;
     border: 0;
-    border-top: 0.1rem solid #333;
+    border-top: 0.1rem solid var(--card-border);
     width: 73%;
 }
 
@@ -285,13 +290,12 @@ hr {
 }
 #light-dark-mode label {
     font-size: 0.9rem;
-    color: #333;
+    color: var(--text-color);
 }
 
 /* First Column Starts here */
 #first {
     flex: 1;
-    min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
@@ -306,7 +310,7 @@ hr {
     flex: 1;
     height: 200px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -342,6 +346,13 @@ hr {
     pointer-events: none;
 }
 
+#weather-widget {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.8rem;
+}
+
 /* Mode blinking light starts*/
 
 .blinking-light {
@@ -350,7 +361,7 @@ hr {
     padding: 0;
     width: 10px;
     height: 10px;
-    background-color: #84cc16;
+    background-color: var(--strobe-light);
     border-radius: 50%;
     animation: blink 1s infinite;
     align-items: end;
@@ -365,9 +376,9 @@ hr {
 .projects {
     display: flex;
     flex-direction: column;
-    height: 370px;
+    /* height: 370px; */
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -387,23 +398,23 @@ hr {
 }
 
 .projects > div::-webkit-scrollbar-track {
-    background: #e7e7e7;
+    background: var(--card-bg);
     border-radius: 5px;
 }
 
 .projects > div::-webkit-scrollbar-thumb {
-    background-color: #888;
+    background-color: var(--text-color);
     border-radius: 5px;
-    border: 2px solid #e7e7e7;
+    border: 2px solid var(--card-border);
 }
 
 .tech-stack {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 150px;
+    height: 160px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -417,7 +428,7 @@ hr {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     flex: 2;
-    min-width: 300px;
+    /* min-width: 300px; */
     
 }
 
@@ -434,7 +445,7 @@ hr {
     justify-content: space-between;
     height: fit-content;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -450,7 +461,7 @@ hr {
     flex-direction: column;
     gap: 10px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -478,7 +489,7 @@ hr {
 }
 
 .contact ul a:hover {
-    color: #007bff;
+    color: var(--accent);
 }
 
 .additional-contact {
@@ -496,12 +507,12 @@ hr {
     gap: 10px;
     text-decoration: none;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--muted-text);
     transition: color 0.3s ease;
 }
 
 .additional-contact a:hover {
-    color: #007bff;
+    color: var(--accent);
 }
 
 .additional-contact a i {
@@ -510,7 +521,7 @@ hr {
 }
 
 .additional-contact a:hover i {
-    color: #0056b3;
+    color: var(--accent);
 }
 
 #exp-container {
@@ -522,20 +533,19 @@ hr {
 
 #years-experience,
 #cv-box {
-    border: 1px solid #ddd;
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    height: 160px;
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
 }
 
 #years-experience p {
-    font-size: 2rem; /* Increase font size */
-    font-weight: bold; /* Increase font weight */
-    color: #333; /* Ensure it stands out */
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--muted-text); 
 }
 
 /* Experience Breakdown Styles */
@@ -554,14 +564,14 @@ hr {
 }
 
 .experience-number {
-    font-size: 2.5rem; /* Larger font size for numbers */
+    font-size: 2.5rem;
     font-weight: bold;
-    color: #333;
+    color: var(--muted-text);
 }
 
 .experience-text {
-    font-size: 0.9rem; /* Smaller font size for text */
-    color: #666;
+    font-size: 0.9rem;
+    color: var(--muted-text);
 }
 
 /* Second Column Ends here */
@@ -577,9 +587,8 @@ hr {
 .experience-box {
     display: flex;
     flex-direction: column;
-    min-height: 375px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -588,9 +597,18 @@ hr {
 .education-box {
     display: flex;
     flex-direction: column;
-    height: 160px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.certification-box {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -607,11 +625,11 @@ hr {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid var(--card-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    height: stretch;
+    /* height: stretch; */
 }
 
 /* Tools List Styles */
@@ -629,11 +647,11 @@ hr {
     align-items: center;
     gap: 5px;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--muted-text);
     padding: 5px 10px;
 }
 
 .tools-list li i {
     font-size: 1.2rem;
-    color: #007bff;
+    color: var(--accent);
 }
