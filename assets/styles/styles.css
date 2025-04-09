@@ -1,8 +1,131 @@
+:root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --card-bg: #e7e7e7;
+    --card-border: #ddd;
+    --accent: #007bff;
+    --muted-text: #666;
+}
+
+/* Default light mode */
 body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: monospace, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    transition: background-color 1.2s ease, color 1.2s ease;
+}
+  
+
+/* Dark mode */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --card-bg: #1e1e1e;
+  --card-border: #444;
+  --accent: #66b2ff;
+  --muted-text: #aaa;
+}
+
+body.dark-mode .projects > div::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+body.dark-mode .projects > div::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 5px;
+  border: 2px solid #1e1e1e;
+}
+
+.dark-mode .projects ul li,
+.dark-mode .experience-box ul li {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+#light-dark-toggle {
+    display: flex;
+    margin-left: auto; /* Align to the right */
+    background: transparent;
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#light-dark-mode {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.mode-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* #light-mode {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    z-index: 2;
+}
+
+#dark-mode {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
+    z-index: 1;
+}
+
+.dark-mode #light-mode {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.8);
+    z-index: 1;
+}
+
+.dark-mode #dark-mode {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    z-index: 2;
+}
+
+#light-mode,
+#dark-mode {
+  display: none;
+} */
+
+/* Focus States for better accessibility and keyboard navigation */
+
+a:focus,
+button:focus,
+li:focus,
+input:focus,
+textarea:focus {
+    outline: 2px dashed #007bff;
+    outline-offset: 2px;
+    background-color: #f0f8ff;
+}
+
+/* Transition for smoothness */
+a,
+button,
+li,
+input,
+textarea {
+    transition: background-color 0.2s ease, outline 0.2s ease;
+}
+
+#header {
+    width: 100%;
 }
 
 .container {
@@ -22,13 +145,13 @@ body {
 }
 
 h2, h3 {
-    color: #333;
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 700;
 }
 
 p {
-    color: #666;
+    color: var(--muted-text);
 }
 
 ul {
@@ -44,8 +167,9 @@ li {
     align-items: flex-start;
     justify-content: space-between; 
     padding-bottom: 5px;
-    background-color: #e7e7e7;
-    border: 1px solid #ddd;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
     border-radius: 3px;
     margin: 5px 0;
     padding: 10px;
@@ -69,7 +193,7 @@ li .description {
     margin-top: 10px; 
     font-size: 0.85rem;
     color: #555;
-    clear: both; /
+    clear: both;
     word-wrap: break-word;
 }
 
@@ -82,10 +206,6 @@ li.active .description {
     body {
         display: flex;
         flex-direction: column;
-    }
-
-    #header {
-        margin-left: 20px !important;
     }
 
     .container {
@@ -157,6 +277,17 @@ hr {
     width: 73%;
 }
 
+#light-dark-mode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto; /* Align to the right */
+}
+#light-dark-mode label {
+    font-size: 0.9rem;
+    color: #333;
+}
+
 /* First Column Starts here */
 #first {
     flex: 1;
@@ -194,6 +325,23 @@ hr {
     text-decoration: underline;
 }
 
+.map-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.map-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    mix-blend-mode: saturation;
+    pointer-events: none;
+}
+
 /* Mode blinking light starts*/
 
 .blinking-light {
@@ -211,40 +359,6 @@ hr {
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
-}
-
-/* Mode blinking light ends */
-
-#mode {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-#mode h3 {
-    margin: 0;
-    font-size: 0.9rem;
-    text-decoration: underline;
-}
-
-.mode-icon {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-
-/* .mode-icon-container {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    justify-content: space-between;
-    
-} */
-
-.mode-text {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
 }
 
 
@@ -471,37 +585,6 @@ hr {
     padding: 1rem;
 }
 
-.experience-box ul li {
-    cursor: pointer;
-    position: relative;
-    display: block; /* Stack description below */
-    padding-bottom: 5px; /* Add spacing for the description */
-}
-
-.experience-box ul li .toggle-icon {
-    margin-left: 10px;
-    font-size: 0.9rem;
-    color: #333;
-    display: flex; /* Replaced float with flexbox */
-    justify-content: flex-end;
-}
-
-.experience-box ul li .description {
-    display: none;
-    margin-top: 5px;
-    font-size: 0.85rem;
-    color: #555;
-    clear: both; /* Ensure it appears below the icon */
-}
-
-.experience-box ul li.active .description {
-    display: block;
-}
-
-.exp-button {
-    width: 100%;
-}
-
 .education-box {
     display: flex;
     flex-direction: column;
@@ -512,7 +595,6 @@ hr {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
 }
-
 
 /* Third Column ends */
 

@@ -87,4 +87,53 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the GitHub Calendar after other DOM operations
     GitHubCalendar(".calendar", "chriskript", {responsive: true, global_stats: false, tooltips: false});
 
+    // === DARK MODE TOGGLE ===
+    const lightIcon = document.getElementById('light-mode');
+    const darkIcon = document.getElementById('dark-mode');
+    const body = document.body;
+
+    // Load mode from localStorage
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+    }
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (!currentTheme) {
+            if (prefersDark) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+
+    // Show active icon
+    function updateIcons() {
+        if (body.classList.contains('dark-mode')) {
+            darkIcon.style.display = 'none';
+            lightIcon.style.display = 'block';
+        } else {
+            darkIcon.style.display = 'block';
+            lightIcon.style.display = 'none';
+        }
+    }
+    updateIcons();
+
+    // Event listeners
+    lightIcon.addEventListener('click', () => {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+        updateIcons();
+    });
+    darkIcon.addEventListener('click', () => {
+        body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+        updateIcons();
+    });
+
 });
