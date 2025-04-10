@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for responsive design and character encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="./assets/styles/github-calendar-responsive.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+
+    <title>Chriskript | Web Developer</title>
+</head>
+<body>
+    <!-- Header section -->
+    <div class="container">
+        <div id="header">
+            <div id="profile-picture-container">
+                <img id="profile-picture" src="https://avatars.githubusercontent.com/u/27041785?v=4" alt="Chris Nwaije jr - web developer">
+            </div>
+            <div id="profile-name">
+                <h2>Chris Nwaije jr</h2>
+                <p>Web Developer</p>
+            </div>
+            <div id="mode-light-strobe">
+                <ul class="light-strobe">
+                    <li id="green-light" class="blinking-light"></li>
+                </ul>
+            </div>
+            
+            <button id="light-dark-toggle" aria-label="Toggle dark/light mode" role="switch" aria-checked="false">
+                <div id="light-dark-mode">
+                    <div id="light-mode" class="mode-icon">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                    <div id="dark-mode" class="mode-icon">
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+            </button>
+            
+        </div>
+    </div>
+    <hr>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- First column: Projects and Tech Stack -->
+        <div id="first" class="column">
+            <!-- Tiny boxes for location and mode -->
+            <div id="tiny-box-container">
+                <div id="location" class="tiny-box map-container">
+                    <!-- <h3>Location</h3> -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16164981.668003546!2d-12.231644458399876!3d8.447851657209092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0baf7da48d0d%3A0x99a8fe4168c50bc8!2sNigeria!5e0!3m2!1sen!2sng!4v1744164013502!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div id="weather-widget" class="tiny-box">
+                    <div id="weather">
+                        <p>Loading weather...</p>
+                    </div>                
+                </div>
+
+            </div>
+
+            <!-- Projects section -->
+            <div class="projects">
+                <h3>Projects</h3>
+                <div>
+                    <ul>
+                        <!-- Each project has a toggleable description -->
+                        <li>Playspot
+                            <i class="fa-solid fa-caret-down toggle-icon"></i>
+                            <div class="description">A social platform for gamers to connect and share experiences.</div>
+                        </li>
+                        <li>Jemba
+                            <i class="fa-solid fa-caret-down toggle-icon"></i>
+                            <div class="description">A project management tool for agile teams.</div>
+                        </li>
+                        <li>LacedUp Ecommerce
+                            <i class="fa-solid fa-caret-down toggle-icon"></i>
+                            <div class="description">An online store for premium sneakers and apparel.</div>
+                        </li>
+                        <li>Interactive Solar System
+                            <i class="fa-solid fa-caret-down toggle-icon"></i>
+                            <div class="description">An interactive 3D solar System built using three.js. Check it out here <a href="https://chriskript.github.io/threejs-solar-system/" target="_blank">here</a>.</div>
+                        </li>
+                        <li>Party Rock Games
+                            <i class="fa-solid fa-caret-down toggle-icon"></i>
+                            <div class="description">A collection of fun and engaging party games.</div>
+                        </li>
+                        <li>Portfolio FlexCard
+                            <i class="fa-solid fa-caret-down toggle-icon"></i>
+                            <div class="description">A responsive portfolio template with flexible card layouts.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tech stack section -->
+            <div class="tech-stack">
+                <h3>My Tools</h3>
+                <div class="tools-list">
+                    <ul>
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <i class="fa-brands fa-js"></i>
+                        <i class="fa-brands fa-node"></i>
+                        <i class="fa-solid fa-code"></i>
+                        <i class="fa-brands fa-figma"></i>
+                        <i class="fa-solid fa-palette"></i>
+                        <i class="fa-solid fa-image"></i>
+                        <i class="fa-solid fa-globe"></i>
+                        <i class="fa-brands fa-wordpress"></i>
+                        <i class="fa-brands fa-git-alt"></i>
+                        <i class="fa-brands fa-github"></i>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other columns -->
+        <div id="other-columns">
+            <!-- Second column: About and Contact -->
+            <div id="second" class="column">
+                <div class="about">
+                    <h2>About</h2>
+                    <p>I'm a self-taught web developer with 6+ of experience. I love creating cool digital experiences using the latest frontend technologies and Node.js for solid backend solutions. Making seamless user interfaces and optimizing performance is my jam—I get a real kick out of turning ideas into reality with clean, efficient code.</p>
+                </div>
+                <div class="contact">
+                    <div class="contact-header">
+                        <h2>Get In Touch</h2>
+                        <ul>
+                            <a href="https://www.linkedin.com/in/chriskript/" target="_blank" title="LinkedIn Profile">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/chriskript/" target="_blank" title="GitHub Profile">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://instagram/chriskript/" target="_blank" title="Instagram Profile">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/chriskript/" target="_blank" title="Twitter Profile">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="additional-contact">
+                        <a href="tel:+2348164872609" class="phone" title="Call Chris">
+                            <i class="fa-solid fa-mobile-retro"></i>
+                            <span>+234 816 487 2609</span>
+                        </a>
+                        <a href="https://wa.me/2348164872609" target="_blank" class="chat" title="Chat on WhatsApp">
+                            <i class="fa-solid fa-comments"></i>
+                            <span>Start a Chat</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Experience and CV section -->
+                <div id="exp-container" class="exp-cv-box">
+                    <div id="years-experience">
+                        <h3>Years of Experience</h3>
+                        <div id="experience-breakdown">
+                            <div class="experience-item">
+                                <span class="experience-number" id="wordpress-years"></span>
+                                <span class="experience-text">WordPress</span>
+                            </div>
+                            <div class="experience-item">
+                                <span class="experience-number" id="javascript-years"></span>
+                                <span class="experience-text">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cv-box">
+                        <h3>CV</h3>
+                        <a href="assets/cv/chriskript_resume.pdf" target="_blank" class="exp-button btn btn-outline-dark">View</a>
+                        <a href="assets/cv/chriskript_resume.pdf" download class="exp-button btn btn-outline-dark">Download</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third column: Experience -->
+            <div id="third" class="column">
+                <div class="experience-box">
+                    <h2>My Experience</h2>
+                    <ul>
+                        <!-- Each experience has a toggleable description -->
+                        <li>Freelance Web Developer
+                            <i class="fa-solid fa-caret-down toggle-icon"></i>
+                            <div class="description">Working on various web development projects for clients worldwide.</div>
+                        </li>
+                        <li>Frontend Developer
+                            <i class="fa-solid fa-caret-down toggle-icon"></i>
+                            <div class="description">Developed a responsive and user-friendly website for a microfinance bank.</div>
+                        </li>
+                        <li>Airline Company Documentation
+                            <i class="fa-solid fa-caret-down toggle-icon"></i>
+                            <div class="description">Created technical documentation for an airline company's internal systems.</div>
+                        </li>
+                        <li>Educational Content Creator
+                            <i class="fa-solid fa-caret-down toggle-icon"></i>
+                            <div class="description">Producing educational content for aspiring web developers.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Education section -->
+                <div class="education-box">
+                    <h2>Education</h2>
+                    <ul>
+                        <li>Bachelor of Engineering</li>
+                    </ul>
+                </div>
+
+                <!-- Certification -->
+                <div class="certification-box">
+                    <h2>Certification</h2>
+                    <ul>
+                        <li>Agile Project Management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Fourth column: Github Chart -->
+            <div id="fourth" class="column">
+                <!-- <h2>Check out my GitHub contributions</h2> -->
+                <div class="github-chart calendar">
+                    <p>Loading contributions...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script> -->
+
+    <script src="./assets/js/github-calendar.min.js"></script>
+
+    <!-- FontAwesome script -->
+    <script src="https://kit.fontawesome.com/020172ff43.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
+
+    
+</body>
+</html>
