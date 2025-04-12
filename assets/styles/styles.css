@@ -109,7 +109,6 @@ body.dark-mode .projects > div::-webkit-scrollbar-thumb {
 } 
 
 /* Focus States for better accessibility and keyboard navigation */
-
 a:focus,
 button:focus,
 li:focus,
@@ -353,8 +352,14 @@ hr {
     font-size: 0.8rem;
 }
 
-/* Mode blinking light starts*/
+#weather-loading-spinner {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
 
+/* Mode blinking light starts*/
 .blinking-light {
     display: inline-block;
     margin: 0;
@@ -386,8 +391,8 @@ hr {
 }
 
 .projects > div {
-    overflow-y: auto; /* Enable vertical scrolling for the div */
-    height: 100%; /* Ensure it takes the full height of the container */
+    overflow-y: auto; /* Enable vertical scrolling for the inner div */
+    height: 100%; 
     scrollbar-width: thin; /* For Firefox */
     scrollbar-color: #888 #e7e7e7; /* For Firefox */
 }
@@ -422,13 +427,12 @@ hr {
 
 /* First Column Ends here */
 
-/* Other Columns house 2nd, 3rd and 4th columns */
+/* Other Columns: 2nd, 3rd and 4th columns */
 #other-columns{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     flex: 2;
-    /* min-width: 300px; */
     
 }
 
@@ -527,8 +531,9 @@ hr {
 #exp-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem; 
     box-sizing: border-box;
+    align-items: start; 
 }
 
 #years-experience,
@@ -536,24 +541,22 @@ hr {
     border: 1px solid var(--card-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    gap: 0.5rem;
+    padding: 1.5rem;
+    gap: 1rem; 
     display: flex;
     flex-direction: column;
+    }
+
+#years-experience h3,
+#cv-box h3 {
+    margin-bottom: 1rem; 
 }
 
-#years-experience p {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--muted-text); 
-}
-
-/* Experience Breakdown Styles */
 #experience-breakdown {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem; 
 }
 
 .experience-item {
@@ -561,20 +564,20 @@ hr {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 0.5rem; 
 }
 
 .experience-number {
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--muted-text);
+    margin-bottom: 0.5rem;
 }
 
 .experience-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--muted-text);
 }
-
-/* Second Column Ends here */
 
 /* Third Column Starts here */
 #third {
