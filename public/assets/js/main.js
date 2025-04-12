@@ -1,8 +1,12 @@
 function updateWeather() {
     const weatherContainer = document.getElementById('weather');
+    const spinner = document.getElementById('weather-loading-spinner');
+    spinner.style.display = 'block'; // Show spinner
+
     fetch('/api/weather?city=Abuja')
         .then(response => response.json())
         .then(data => {
+            spinner.style.display = 'none'; // Hide spinner
             if (data && data.main) {
                 const temperature = Math.round(data.main.temp);
                 const weatherDescription = data.weather[0].description;
@@ -20,6 +24,7 @@ function updateWeather() {
             }
         })
         .catch(error => {
+            spinner.style.display = 'none'; // Hide spinner
             console.error('Error fetching weather data:', error);
             weatherContainer.innerHTML = '<p>Error fetching weather data.</p>';
         });
