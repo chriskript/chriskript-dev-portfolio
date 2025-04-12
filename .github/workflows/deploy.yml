@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Trigger on push to the 'main' branch (you can change this if needed)
+      - main
   pull_request:
     branches:
-      - main # Trigger when a PR is merged into 'main'
+      - main
 
 jobs:
   deploy:
@@ -19,20 +19,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14" # Set the Node.js version you want to use
-
-      - name: Set up Git user
-        run: |
-          git config --global user.name "Chris Nwaije Jr"
-          git config --global user.email "okem.nwaije@gmail.com"
+          node-version: "14"
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project (optional, if you want to build before deploy)
+      - name: Build the project (optional)
         run: npm run build
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically provided by GitHub
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
