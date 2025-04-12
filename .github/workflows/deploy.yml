@@ -21,6 +21,11 @@ jobs:
         with:
           node-version: "14" # Set the Node.js version you want to use
 
+      - name: Set up Git user
+        run: |
+          git config --global user.name "Chris Nwaije Jr"
+          git config --global user.email "okem.nwaije@gmail.com"
+
       - name: Install dependencies
         run: npm install
 
