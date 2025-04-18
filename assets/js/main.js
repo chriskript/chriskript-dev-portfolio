@@ -12,12 +12,29 @@ function updateWeather() {
                 const weatherDescription = data.weather[0].description;
                 const humidity = data.main.humidity;
                 const windSpeed = data.wind.speed;
+                const pressure = data.main.pressure; // Retain Pressure field
+
+                // Map weather conditions to FontAwesome icons
+                const weatherIcons = {
+                    "clear sky": "fa-sun",
+                    "few clouds": "fa-cloud-sun",
+                    "scattered clouds": "fa-cloud",
+                    "broken clouds": "fa-cloud",
+                    "shower rain": "fa-cloud-showers-heavy",
+                    "rain": "fa-cloud-rain",
+                    "thunderstorm": "fa-bolt",
+                    "snow": "fa-snowflake",
+                    "mist": "fa-smog",
+                    "overcast clouds": "fa-cloud"
+                };
+                const weatherIcon = weatherIcons[data.weather[0].description.toLowerCase()] || "fa-question-circle";
 
                 weatherContainer.innerHTML = `
-                    <p>Temperature: ${temperature}°C</p>
-                    <p>Description: ${weatherDescription}</p>
-                    <p>Humidity: ${humidity}%</p>
-                    <p>Wind Speed: ${windSpeed} m/s</p>
+                    <p><i class="fa-solid ${weatherIcon}"></i> Temperature: ${temperature}°C</p>
+                    <p><i class="fa-solid fa-cloud"></i> ${weatherDescription}</p>
+                    <p><i class="fa-solid fa-droplet"></i> Humidity: ${humidity}%</p>
+                    <p><i class="fa-solid fa-wind"></i> Wind: ${windSpeed} m/s</p>
+                    <p><i class="fa-solid fa-gauge-high"></i> Pressure: ${pressure} hPa</p> <!-- Retain Pressure field -->
                 `;
             } else {
                 weatherContainer.innerHTML = '<p>Error fetching weather data.</p>';
