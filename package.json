@@ -13,10 +13,12 @@
     "build": "echo \"No build step required\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Chris-Nwaije Okemsinachi <https://github.com/chriskript>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.8.4",
+    "@firebase/util": "^1.11.0",
+    "axios": "^1.12.0",
+    "caniuse-lite": "^1.0.30001714",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
