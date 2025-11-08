@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "predeploy": "echo Preparing to deploy...",
-    "deploy": "gh-pages -d public -u \"github-actions[bot] github-actions[bot]@users.noreply.github.com\" -r https://x-access-token:${GITHUB_TOKEN}@github.com/chriskript/chriskript-dev-portfolio.git",
+    "deploy": "gh-pages -d public -r https://x-access-token:${GITHUB_TOKEN}@github.com/chriskript/chriskript-dev-portfolio.git",
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo \"No build step required\""
