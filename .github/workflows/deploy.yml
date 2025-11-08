@@ -1,4 +1,7 @@
 name: Deploy to GitHub Pages
+permissions:
+  contents:
+    write pages: write
 
 on:
   push:
@@ -15,6 +18,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
